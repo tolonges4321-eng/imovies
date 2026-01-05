@@ -445,8 +445,26 @@ iframe {
   max-height: 100vh;
 }
 
+    /* 📱 Modal layout for phones */
+@media (max-width: 768px) {
+  .modal-body {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .modal-text {
+    text-align: center;
+  }
+
+  .modal .close {
+    font-size: 28px;
+    padding: 10px;
+  }
+}
+
 
 }
+
 
 
 
