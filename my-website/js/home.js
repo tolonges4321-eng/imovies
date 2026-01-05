@@ -141,9 +141,14 @@ toggle.addEventListener("click", () => {
     document.body.classList.contains("light") ? "☀️" : "🌙";
 });
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js");
+}
+
 
 
     init();
+
 
 
 
