@@ -68,7 +68,9 @@ body.light {
 
     .list {
       display: flex;
+      gap: 10px;
       overflow-x: auto;
+      scroll-snap-type: x mandatory;
     }
 
     .list img {
@@ -79,6 +81,9 @@ body.light {
       border-radius: 6px;
       cursor: pointer;
       transition: transform 0.3s ease;
+
+      /* ✅ ADD THIS LINE */
+      scroll-snap-align: start;
     }
 
     .list img:hover {
@@ -358,6 +363,7 @@ body.light {
 }
 
 }
+
 
 
 
