@@ -426,8 +426,28 @@ body.light {
   }
 }
 
+    /* 📺 Responsive video for mobile */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: black;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+iframe {
+  max-height: 100vh;
+}
+
 
 }
+
 
 
 
