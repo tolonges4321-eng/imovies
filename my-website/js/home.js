@@ -114,11 +114,21 @@ const API_KEY = '8eddbd1141f6efcdb9ef25e5363ea360';
       const tvShows = await fetchTrending('tv');
       const anime = await fetchTrendingAnime();
 
-      displayBanner(movies[Math.floor(Math.random() * movies.length)]);
-      displayList(movies, 'movies-list');
-      displayList(tvShows, 'tvshows-list');
-      displayList(anime, 'anime-list');
-    }
+      bannerItems = movies.filter(m => m.backdrop_path);
+      displayBanner(bannerItems[0]);
+      startBannerAutoPlay();
+
+        function startBannerAutoPlay() {
+  setInterval(() => {
+    bannerIndex = (bannerIndex + 1) % bannerItems.length;
+    displayBanner(bannerItems[bannerIndex]);
+  }, 5000); // 5 seconds
+}
+
+let bannerItems = [];
+let bannerIndex = 0;
+
 
 
     init();
+
