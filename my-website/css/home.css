@@ -397,8 +397,23 @@ body.light {
   transform: scale(1.05);
 }
 
+    /* 🎬 Responsive movie posters */
+.list img {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .list img {
+    max-width: 120px;
+  }
+}
+
 
 }
+
 
 
 
