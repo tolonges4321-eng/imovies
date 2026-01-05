@@ -41,6 +41,7 @@ let bannerIndex = 0;
         const img = document.createElement('img');
         img.src = `${IMG_URL}${item.poster_path}`;
         img.alt = item.title || item.name;
+        img.loading = "lazy";
         img.onclick = () => showDetails(item);
         container.appendChild(img);
       });
@@ -134,4 +135,5 @@ function startBannerAutoPlay() {
 
 
     init();
+
 
