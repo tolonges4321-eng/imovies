@@ -40,7 +40,7 @@ let bannerIndex = 0;
       items.forEach(item => {
         const img = document.createElement('img');
         img.src = `${IMG_URL}${item.poster_path}`;
-        img.alt = item.title || item.name;
+        img.alt = `${item.title || item.name} poster`;
         img.loading = "lazy";
         img.onclick = () => showDetails(item);
         container.appendChild(img);
@@ -148,6 +148,7 @@ if ("serviceWorker" in navigator) {
 
 
     init();
+
 
 
 
