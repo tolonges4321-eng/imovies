@@ -145,9 +145,21 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/service-worker.js");
 }
 
+function addToFavorites() {
+  const user = localStorage.getItem("user");
+  if (!user) {
+    alert("Please login first");
+    return;
+  }
 
+  let favs = JSON.parse(localStorage.getItem("favorites")) || [];
+  favs.push(currentItem);
+  localStorage.setItem("favorites", JSON.stringify(favs));
+  alert("Added to favorites!");
+}
 
     init();
+
 
 
 
