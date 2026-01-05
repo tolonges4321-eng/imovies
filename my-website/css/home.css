@@ -362,7 +362,23 @@ body.light {
   }
 }
 
+    #fav-btn {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
+
+#fav-btn:hover {
+  background: darkred;
+}
+
+
+}
+
 
 
 
