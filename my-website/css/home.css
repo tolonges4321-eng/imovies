@@ -462,8 +462,18 @@ iframe {
   }
 }
 
+    /* 🎬 FIX MODAL POSTER SIZE */
+#modal-image {
+  width: 160px;        /* ✅ fixed small size */
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
 
 }
+
 
 
 
