@@ -104,7 +104,7 @@ let bannerIndex = 0;
         if (!item.poster_path) return;
         const img = document.createElement('img');
         img.src = `${IMG_URL}${item.poster_path}`;
-        img.alt = item.title || item.name;
+        img.alt = `${item.title || item.name} poster`;
         img.onclick = () => {
           closeSearchModal();
           showDetails(item);
@@ -148,6 +148,7 @@ if ("serviceWorker" in navigator) {
 
 
     init();
+
 
 
 
