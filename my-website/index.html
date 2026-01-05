@@ -3,8 +3,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>iMovies HUB🎥</title>
-  <link rel="stylesheet" href="css/home.css">
   <link rel="preload" href="css/home.css" as="style">
+  <link rel="stylesheet" href="css/home.css">
   <link rel="preload" href="js/home.js" as="script">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -20,8 +20,10 @@
     </div>
   </div>
 
-  <div class="banner" id="banner">
-    <h1 id="banner-title"></h1>
+  <div class="banner" id="banner" role="banner">
+    <div class="banner-overlay">
+      <h1 id="banner-title"></h1>
+    </div>
   </div>
 
   <div class="row">
@@ -83,3 +85,4 @@
   
 
 </body>
+
