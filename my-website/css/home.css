@@ -376,8 +376,14 @@ body.light {
   background: darkred;
 }
 
+    .navbar img {
+  height: 45px;
+  width: auto;
+}
+
 
 }
+
 
 
 
