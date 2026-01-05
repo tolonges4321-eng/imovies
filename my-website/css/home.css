@@ -411,8 +411,24 @@ body.light {
   }
 }
 
+    /* 📱 Mobile-friendly modal */
+.modal-content {
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 10px;
+  }
+}
+
 
 }
+
 
 
 
