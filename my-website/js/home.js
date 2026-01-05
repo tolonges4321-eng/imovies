@@ -3,6 +3,9 @@ const API_KEY = '8eddbd1141f6efcdb9ef25e5363ea360';
     const IMG_URL = 'https://image.tmdb.org/t/p/original';
     let currentItem;
 
+let bannerItems = [];
+let bannerIndex = 0;
+
     async function fetchTrending(type) {
       const res = await fetch(`${BASE_URL}/trending/${type}/week?api_key=${API_KEY}`);
       const data = await res.json();
@@ -114,11 +117,21 @@ const API_KEY = '8eddbd1141f6efcdb9ef25e5363ea360';
       const tvShows = await fetchTrending('tv');
       const anime = await fetchTrendingAnime();
 
-      displayBanner(movies[Math.floor(Math.random() * movies.length)]);
+      bannerItems = movies.filter(m => m.backdrop_path);
+      displayBanner(bannerItems[0]);
+      startBannerAutoPlay();
       displayList(movies, 'movies-list');
       displayList(tvShows, 'tvshows-list');
       displayList(anime, 'anime-list');
     }
 
+function startBannerAutoPlay() {
+  setInterval(() => {
+    bannerIndex = (bannerIndex + 1) % bannerItems.length;
+    displayBanner(bannerItems[bannerIndex]);
+  }, 5000);
+}
+
 
     init();
+
