@@ -381,8 +381,25 @@ body.light {
   width: auto;
 }
 
+    /* 🔵 Neon glow logo */
+.navbar img {
+  height: 45px;
+  width: auto;
+  filter: drop-shadow(0 0 6px #00eaff)
+          drop-shadow(0 0 12px #00eaff);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.navbar img:hover {
+  filter: drop-shadow(0 0 10px #00eaff)
+          drop-shadow(0 0 20px #00eaff)
+          drop-shadow(0 0 30px #00eaff);
+  transform: scale(1.05);
+}
+
 
 }
+
 
 
 
