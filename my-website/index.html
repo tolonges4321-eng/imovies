@@ -71,19 +71,24 @@
   <div class="modal" id="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()" style="color: red;">&times;</span>
-<div class="modal-body">
-  <!-- 🎬 Video FIRST (bigger) -->
-  <div class="video-wrapper portrait-video">
+<div class="modal-portrait">
+
+  <!-- 🎥 VIDEO -->
+  <div class="portrait-video">
     <iframe
       id="modal-video"
-      allowfullscreen
-      allow="autoplay; fullscreen">
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen>
     </iframe>
+
+    <!-- Buttons -->
+    <button id="pip-btn" onclick="enablePiP()">📺</button>
+    <button id="rotate-btn" onclick="rotateFullscreen()">⤢</button>
   </div>
 
-  <!-- 📄 Info BELOW -->
+  <!-- 📄 INFO -->
   <div class="portrait-info">
-    <img id="modal-image" src="" alt="Poster" />
+    <img id="modal-image" />
 
     <div class="info-text">
       <h2 id="modal-title"></h2>
@@ -91,9 +96,11 @@
 
       <p id="modal-description"></p>
 
+      <button class="expand-btn" onclick="toggleDescription()">⬇ Show more</button>
       <button id="fav-btn">❤️ Add to Favorites</button>
     </div>
   </div>
+
 </div>
       
       <div class="server-selector">
@@ -151,6 +158,7 @@ document.addEventListener("click", function () {
 
 </body>
 </html>
+
 
 
 
