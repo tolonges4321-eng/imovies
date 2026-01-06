@@ -71,18 +71,28 @@
   <div class="modal" id="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()" style="color: red;">&times;</span>
-      <div class="modal-body">
-  <img id="modal-image" src="" alt="" />
-  <div class="modal-text">
-    <h2 id="modal-title"></h2>
-    <div class="stars" id="modal-rating"></div>
-    <p id="modal-description"></p>
+<div class="modal-body">
+  <!-- 🎬 Video FIRST (bigger) -->
+  <div class="video-wrapper portrait-video">
+    <iframe
+      id="modal-video"
+      allowfullscreen
+      allow="autoplay; fullscreen">
+    </iframe>
+  </div>
 
-        <!-- ❤️ Favorites Button -->
-    <button id="fav-btn" onclick="addToFavorites()">
-      ❤️ Add to Favorites
-    </button>
-   </div>
+  <!-- 📄 Info BELOW -->
+  <div class="portrait-info">
+    <img id="modal-image" src="" alt="Poster" />
+
+    <div class="info-text">
+      <h2 id="modal-title"></h2>
+      <div class="stars" id="modal-rating"></div>
+
+      <p id="modal-description"></p>
+
+      <button id="fav-btn">❤️ Add to Favorites</button>
+    </div>
   </div>
 </div>
       
@@ -141,6 +151,7 @@ document.addEventListener("click", function () {
 
 </body>
 </html>
+
 
 
 
