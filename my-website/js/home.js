@@ -158,7 +158,39 @@ function addToFavorites() {
   alert("Added to favorites!");
 }
 
+function toggleDescription() {
+  const desc = document.getElementById("modal-description");
+  const btn = document.querySelector(".expand-btn");
+
+  desc.classList.toggle("expanded");
+  btn.textContent = desc.classList.contains("expanded")
+    ? "⬆ Show less"
+    : "⬇ Show more";
+}
+
+function rotateFullscreen() {
+  const iframe = document.getElementById("modal-video");
+
+  if (iframe.requestFullscreen) iframe.requestFullscreen();
+  else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+}
+
+async function enablePiP() {
+  const iframe = document.getElementById("modal-video");
+  try {
+    const video = iframe.contentDocument.querySelector("video");
+    if (video && document.pictureInPictureEnabled) {
+      await video.requestPictureInPicture();
+    } else {
+      alert("PiP not supported.");
+    }
+  } catch {
+    alert("Video source blocks PiP.");
+  }
+}
+
     init();
+
 
 
 
