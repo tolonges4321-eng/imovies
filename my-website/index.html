@@ -89,22 +89,54 @@
   </div>
 </footer>
 
-<!-- 🔔 Optimized Popunder Script -->
 <script>
-let popLoaded = false;
+(function () {
+  let popLoaded = false;
 
-document.addEventListener("click", function () {
-  if (popLoaded || localStorage.getItem("popShown")) return;
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
 
-  popLoaded = true;
-  localStorage.setItem("popShown", "1");
+  function loadPopunder() {
+    if (popLoaded) return;
+    if (!isMobile()) return; // 🔥 MOBILE ONLY
 
-  const s = document.createElement("script");
-  s.src = "https://avouchlawsrethink.com/b6/f0/25/b6f0253d795f246b1a7f7c0c987ff1de.js";
-  s.async = true;
-  document.body.appendChild(s);
-});
+    // once per session
+    if (sessionStorage.getItem("popShown")) return;
+    sessionStorage.setItem("popShown", "1");
+
+    popLoaded = true;
+
+    const s = document.createElement("script");
+    s.src = "https://avouchlawsrethink.com/b6/f0/25/b6f0253d795f246b1a7f7c0c987ff1de.js";
+    s.async = true;
+
+    s.onerror = function () {
+      fallbackPop();
+    };
+
+    document.body.appendChild(s);
+  }
+
+  function fallbackPop() {
+    // 🔁 Fallback if blocked
+    window.open("https://example.com", "_blank");
+  }
+
+  // Attach ONLY to movie clicks
+  document.addEventListener("click", function (e) {
+    const movie = e.target.closest(".list img");
+    if (movie) {
+      loadPopunder();
+    }
+  });
+
+})();
 </script>
+  
 
 </body>
 </html>
+
+
+
